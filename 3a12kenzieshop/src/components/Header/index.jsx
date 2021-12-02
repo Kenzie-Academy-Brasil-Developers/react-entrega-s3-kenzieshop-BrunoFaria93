@@ -4,18 +4,24 @@ import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { signInThunk } from "../../store/modules/user/thunks";
 import { logoutAction } from "../../store/modules/user/actions";
-
+import { useEffect } from "react";
+import { useState } from "react";
+import { toast } from 'react-hot-toast'
 const Header = () => {
   const dispatch = useDispatch()
   const history = useHistory();
   const cart = useSelector((state) => state.cart);
 
-
 const logout = () => {
     dispatch(logoutAction(''))
     localStorage.clear()
     history.push('/login')
-  }
+    toast.success(`Volte sempre!`)
+    setTimeout(function(){ 
+        window.location.reload(false)
+    }, 500);
+}
+
 
   return (
     <header className="header">

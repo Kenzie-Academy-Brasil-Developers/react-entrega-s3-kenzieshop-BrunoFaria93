@@ -26,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
     }
     .cart-img{
         height: 80px;
+        margin-left: 7px;
     }
     .span-cart{
         padding: 10px;
@@ -36,6 +37,36 @@ const GlobalStyle = createGlobalStyle`
         align-items: center;
         margin-top: 100px;
     }
-`
+    .header-login{
+        background-color: #403CAA;
+        margin: 0;
+        padding: 20px;
+    }
+    .logo-login{
+        text-align: center;
+        color: white;
+        margin: 0;
+        font-family: Lobster;
+    }
+    .link-cadastro{
+        text-decoration: none;
+        color: #403CAA;
+        font-size: 0.9rem;
+        margin-top: 15px;
+    }
 
-export default GlobalStyle
+
+
+@media screen and (min-width: 1788px) {
+  .logo-login {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 1300px) {
+    .logo-login {
+    font-size: 3rem;
+  }
+}
+`;
+
+export default GlobalStyle;

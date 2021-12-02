@@ -5,6 +5,9 @@ import { Container, ProductList } from "./styles";
 import { addToCartThunk } from "../../store/modules/cart/thunks";
 import { useDispatch } from "react-redux";
 import api from "../../services/api";
+import { toast } from 'react-hot-toast'
+import Header from '../../components/Header'
+import { motion } from "framer-motion";
 
 function Home() {
   const dispatch = useDispatch();
@@ -26,7 +29,21 @@ function Home() {
     loadProducts();
   }, []);
 
+  const addCart = (product) => {
+    dispatch(addToCartThunk(product))
+    toast.success(`Produto adicionado!`)
+  }
   return (
+
+    <motion.div
+        className="form-container"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+    >
+      
+    <Header />
     <Container>
       {loading ? (
           <div className='loading'>
@@ -34,6 +51,7 @@ function Home() {
           </div>
       ) : (
         <ProductList>
+        
           {products.map((product) => (
             <li key={product.id}>
               <figure>
@@ -44,7 +62,7 @@ function Home() {
                 <span>{product.priceFormatted}</span>
                 <button
                   type="button"
-                  onClick={() => dispatch(addToCartThunk(product))}
+                  onClick={() => addCart(product)}
                 >
                   <span>Adicionar ao carrinho</span>
                 </button>
@@ -54,6 +72,7 @@ function Home() {
         </ProductList>
       )}
     </Container>
+    </motion.div>
   );
 }
 export default Home;

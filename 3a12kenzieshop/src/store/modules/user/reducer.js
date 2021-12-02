@@ -1,5 +1,6 @@
 const defaultState ={
-    token: localStorage.getItem('token') || ''
+    token: localStorage.getItem('token') || '',
+    user: {}
 }
 
 const userReducer = (state = defaultState, action) => {
@@ -7,7 +8,7 @@ const userReducer = (state = defaultState, action) => {
         case '@user/SIGN_IN':
             const { token } = action
 
-            return token
+            return {...state, token}
 
         case '@user/LOG_OUT':
             return ''

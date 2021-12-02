@@ -15,5 +15,12 @@ export const Container404 = styled.div`
       align-items: center;
       flex-direction: column;
   }
+
+  @media screen and (min-width: 1788px) {
+    
+  }
+  @media screen and (min-width: 1300px) {
+      
+  }
 `;
 export const Image = styled.img``;

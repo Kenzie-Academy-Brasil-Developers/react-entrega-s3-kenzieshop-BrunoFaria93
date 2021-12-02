@@ -31,7 +31,7 @@ button{
     background-color: #403CAA;
     color: white;
     font-size: 1.1rem;
-    
+
 }
 
 span{
@@ -42,6 +42,70 @@ strong{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+
+@media screen and (min-width: 1788px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap ;
+
+    strong{
+        width: 20vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-overflow: ellipsis;
+}
+    li{
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    button{
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #403CAA;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+}
+@media screen and (min-width: 1300px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    strong{
+        width: 20vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-overflow: ellipsis;
+}
+    li{
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    button{
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #403CAA;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
 }
 
 `
